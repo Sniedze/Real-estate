@@ -1,5 +1,5 @@
 {
-    "users": {
+    "sellers": {
         "u.sniedze@gmail.com": {
             "name": "Ulrika",
             "lastName": "Sniedze",
@@ -85,7 +85,25 @@
             "lastName": "Sniedze",
             "email": "",
             "password": ""
+        },
+        "": {
+            "name": "Ulrika",
+            "lastName": "Sniedze",
+            "email": "55@d.com",
+            "password": "3eR!99999"
+        },
+        "69a0c2daed2a96d05fdfcaa6eb909bed": {
+            "name": "Ulrika",
+            "lastName": "Sniedze",
+            "email": "55@d.com",
+            "password": "3eR!99999"
+        },
+        "3338516724c996f04478f60d6bc2d181": {
+            "name": "Ulrika",
+            "lastName": "Sniedze",
+            "email": "55@d.com",
+            "password": "3Errrrrrrrr"
         }
     },
-    "agents": {}
+    "byuers": {}
 }

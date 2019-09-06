@@ -1,6 +1,6 @@
 <?php
-$sPageTitle = 'Sign up';
-$sClassActive = 'signup';
+$sPageTitle = 'Seller Sign up';
+$sClassActive = 'seller-signup';
 require_once(__DIR__.'/components/top.php');
 
 ?>
@@ -30,7 +30,3 @@ require_once(__DIR__.'/components/top.php');
     </div>
 </body>
 </html>
-
-<?php
-
-
