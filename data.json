@@ -1,0 +1,91 @@
+{
+    "users": {
+        "u.sniedze@gmail.com": {
+            "name": "Ulrika",
+            "lastName": "Sniedze",
+            "email": "u.sniedze@gmail.com",
+            "password": "555"
+        },
+        "yangminwang@gmail.com": {
+            "name": "Yang Min",
+            "lastName": "Wang",
+            "email": "yangminwang@gmail.com",
+            "password": "666"
+        },
+        "475d6e00b37eb87": {
+            "name": "U",
+            "lastName": "S",
+            "email": "u.sniedze@g",
+            "password": "777"
+        },
+        "525d6e9a47a9a45": {
+            "name": "U",
+            "lastName": "S",
+            "email": "u@g",
+            "password": "888"
+        },
+        "805d6e9acbc7902": {
+            "name": "Ulrika",
+            "lastName": "Sniedze",
+            "email": "u.sniedze@gmail.com",
+            "password": "555",
+            "properties": {
+                "5d6fc3a867cf1": {
+                    "price": 4444,
+                    "image": "5d6fc3a7e9ede.jpg"
+                },
+                "5d6fc3e19066e": {
+                    "price": 666666,
+                    "image": "5d6fc3e18fab6.png"
+                },
+                "5d6fc4392ebf9": {
+                    "price": 666666,
+                    "image": "5d6fc4392e040.png"
+                },
+                "5d7165a3636da": {
+                    "price": 0,
+                    "image": "5d7165a3632f2."
+                },
+                "5d7166958beb5": {
+                    "price": 78,
+                    "image": "5d7166958b2fd.jpg"
+                },
+                "5d71670d877db": {
+                    "price": 78,
+                    "image": "5d71670d84ce3.jpg"
+                }
+            }
+        },
+        "745d6fe0da021d9": {
+            "name": "Pacis",
+            "lastName": "Sniedze",
+            "email": "pacis.sniedze@gmail.com",
+            "password": "999",
+            "properties": {
+                "5d7167b87e676": {
+                    "price": 900,
+                    "image": "5d7167b87dabe.jpg"
+                }
+            }
+        },
+        "375d6fe17a794cc": {
+            "name": "Phil",
+            "lastName": "Collins",
+            "email": "phil@gmail.com",
+            "password": "777"
+        },
+        "655d716474eb18f": {
+            "name": "Ab",
+            "lastName": "bb",
+            "email": "a@b",
+            "password": "222"
+        },
+        "115d72824d7814a": {
+            "name": "Ulrika",
+            "lastName": "Sniedze",
+            "email": "",
+            "password": ""
+        }
+    },
+    "agents": {}
+}
