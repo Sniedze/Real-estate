@@ -5,7 +5,7 @@ require_once(__DIR__.'/components/top.php');
 
 ?>
     <div class="form-container">
-        <form action="" method="POST">
+        <form action="api-create-seller-profile.php" method="POST">
             <div class="input-field">
                 <label for="">Name</label>
                 <input type="text" name="txtName" value="Ulrika" id="name">

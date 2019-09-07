@@ -1,27 +1,20 @@
 <?php
-session_start();
-print_r($_SESSION);
+//session_start();
+//$sSellerId =  $_GET['id'];
+
+//echo $sSellerId;
 require_once(__DIR__.'/functions.php');
-$sPageTitle = 'User Login';
-$sClassActive = 'user-login';
+$sPageTitle = 'Seller Profile';
+$sClassActive = 'seller-login';
 
-$jData = getDataAsJson('data.json');
-$sUserId = $_SESSION['id'];
-$_SESSION['jUser'] = $jData->users->$sUserId;
-$jUser = $_SESSION['jUser'];
-
-
-
+//$jData = getDataAsJson('data.json');
+include('api-seller-login-session.php');
 require_once(__DIR__.'/components/top.php');
-echo "Welcome, $jUser->name";
+//echo "Welcome, {$jData->sellers->$sSellerId->name}";
 ?>
-
+<h2>Welcome, <?= $login_session->name?></h2>
 <h2>Upload Property</h2>
 <a href="upload.php">Upload new property</a>
-
-
-
-
 <a href="logout.php">Log out</a>
     
 </body>

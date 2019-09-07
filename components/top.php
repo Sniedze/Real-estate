@@ -13,7 +13,7 @@
         <a <?= $sClassActive == 'properties'?'class="active"':'';?> href="properties.php">BUY</a>
         <a <?= $sClassActive == 'sell'?'class="active"':'';?> href="sell.php">SELL</a> 
         <a <?= $sClassActive == 'seller-signup'?'class="active"':''; ?> href="seller-signup.php">SIGN UP</a> 
-        <a <?= $sClassActive == 'login'?'class="active"':'';?> href="user-login.php">LOG IN</a>
+        <a <?= $sClassActive == 'login'?'class="active"':'';?> href="seller-login.php">LOG IN</a>
             
     </nav>
    

@@ -1,28 +1,16 @@
 {
-    "sellers": {
-        "u.sniedze@gmail.com": {
-            "name": "Ulrika",
-            "lastName": "Sniedze",
-            "email": "u.sniedze@gmail.com",
-            "password": "555"
-        },
+    "sellers": {        
         "yangminwang@gmail.com": {
             "name": "Yang Min",
             "lastName": "Wang",
             "email": "yangminwang@gmail.com",
-            "password": "666"
+            "password": "666Ahhkk"
         },
         "475d6e00b37eb87": {
             "name": "U",
             "lastName": "S",
             "email": "u.sniedze@g",
             "password": "777"
-        },
-        "525d6e9a47a9a45": {
-            "name": "U",
-            "lastName": "S",
-            "email": "u@g",
-            "password": "888"
         },
         "805d6e9acbc7902": {
             "name": "Ulrika",
@@ -60,7 +48,7 @@
             "name": "Pacis",
             "lastName": "Sniedze",
             "email": "pacis.sniedze@gmail.com",
-            "password": "999",
+            "password": "999Ppppp",
             "properties": {
                 "5d7167b87e676": {
                     "price": 900,
@@ -72,37 +60,13 @@
             "name": "Phil",
             "lastName": "Collins",
             "email": "phil@gmail.com",
-            "password": "777"
+            "password": "777Ppppp"
         },
         "655d716474eb18f": {
             "name": "Ab",
             "lastName": "bb",
             "email": "a@b",
             "password": "222"
-        },
-        "115d72824d7814a": {
-            "name": "Ulrika",
-            "lastName": "Sniedze",
-            "email": "",
-            "password": ""
-        },
-        "": {
-            "name": "Ulrika",
-            "lastName": "Sniedze",
-            "email": "55@d.com",
-            "password": "3eR!99999"
-        },
-        "69a0c2daed2a96d05fdfcaa6eb909bed": {
-            "name": "Ulrika",
-            "lastName": "Sniedze",
-            "email": "55@d.com",
-            "password": "3eR!99999"
-        },
-        "3338516724c996f04478f60d6bc2d181": {
-            "name": "Ulrika",
-            "lastName": "Sniedze",
-            "email": "55@d.com",
-            "password": "3Errrrrrrrr"
         }
     },
     "buyers": {}
