@@ -1,6 +1,7 @@
 <?php
 session_start();
-$sUserId = $_SESSION['id'];
+echo $_SESSION['login_id'];
+$sUserId = $_SESSION['login_id'];
 require_once(__DIR__.'/functions.php');
 if($_POST){
 echo "<div>SIZE: {$_FILES['myFile']['size']}</div>";
