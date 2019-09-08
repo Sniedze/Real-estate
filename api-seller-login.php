@@ -18,7 +18,7 @@ if($_POST){
     foreach($jData->sellers as $sSellerId=> $jSeller){
            if($jSeller->email == $sLoginEmail && $jSeller->password == $sLoginPassword){                
             $_SESSION['login_id']=$sSellerId;
-                header('Location: seller-profile.php');            
+                header('Location: seller-properties.php');            
         }        
         }     
 }

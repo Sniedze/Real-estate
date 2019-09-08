@@ -7,6 +7,10 @@ require_once(__DIR__.'/functions.php');
 
 
 if($_POST){
+    $file = $_FILES['profile-image']['name'];
+    $ext = pathinfo($file, PATHINFO_EXTENSION);
+    $sProfileImageName= bin2hex(random_bytes(16)).'.'.$ext;
+    move_uploaded_file($_FILES['myFile']['tmp_name'], __DIR__."/images/$sProfileImageName");
     $sName = $_POST['txtName'];
     $sLastName = $_POST['txtLastName'];
     $sEmail = $_POST['txtEmail'];
@@ -30,10 +34,11 @@ if($_POST){
         $jSeller->lastName = $sLastName;
         $jSeller->email = $sEmail;
         $jSeller->password = $sPassword;
+        $jSeller->profileImage = $sProfileImageName;
         $sUniqueSellerId = bin2hex(random_bytes(16));       
         $jData->sellers->$sUniqueSellerId = $jSeller;
         saveDataToFile($jData, __DIR__.'/data.json');
         echo '{"status":1, "message":"Success, seller profile created", "line":'.__LINE__.'}';
-        //header("Location: seller-login.php?");
+        header('Location: seller-login.php?');
 
     }

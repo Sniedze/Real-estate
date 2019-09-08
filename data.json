@@ -1,5 +1,5 @@
 {
-    "sellers": {        
+    "sellers": {
         "yangminwang@gmail.com": {
             "name": "Yang Min",
             "lastName": "Wang",
@@ -16,31 +16,20 @@
             "name": "Ulrika",
             "lastName": "Sniedze",
             "email": "u.sniedze@gmail.com",
-            "password": "555",
+            "password": "555Ppppp",
             "properties": {
-                "5d6fc3a867cf1": {
-                    "price": 4444,
-                    "image": "5d6fc3a7e9ede.jpg"
-                },
-                "5d6fc3e19066e": {
-                    "price": 666666,
-                    "image": "5d6fc3e18fab6.png"
-                },
-                "5d6fc4392ebf9": {
-                    "price": 666666,
-                    "image": "5d6fc4392e040.png"
-                },
-                "5d7165a3636da": {
-                    "price": 0,
-                    "image": "5d7165a3632f2."
-                },
-                "5d7166958beb5": {
-                    "price": 78,
-                    "image": "5d7166958b2fd.jpg"
-                },
-                "5d71670d877db": {
-                    "price": 78,
-                    "image": "5d71670d84ce3.jpg"
+                
+                "5d750362d1423": {
+                    "price": 6000000,
+                    "image": "5d750362d009b.jpg",
+                    "type": "house",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "78",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "A beautiful environment!"
                 }
             }
         },
@@ -50,11 +39,7 @@
             "email": "pacis.sniedze@gmail.com",
             "password": "999Ppppp",
             "properties": {
-                "5d7167b87e676": {
-                    "price": 900,
-                    "image": "5d7167b87dabe.jpg"
-                }
-            }
+                           }
         },
         "375d6fe17a794cc": {
             "name": "Phil",
