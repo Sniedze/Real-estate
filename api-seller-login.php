@@ -2,6 +2,11 @@
 
 require_once(__DIR__.'/functions.php');
 session_start();
+if($_SESSION){
+    echo '{"status":1,"message":"success"}';
+    header('Location: seller-profile.php');
+   
+}
 
 if($_POST){
     $sLoginEmail = $_POST['txtLoginEmail'];
@@ -17,8 +22,9 @@ if($_POST){
     //Checking if user is in the database
     foreach($jData->sellers as $sSellerId=> $jSeller){
            if($jSeller->email == $sLoginEmail && $jSeller->password == $sLoginPassword){                
-            $_SESSION['login_id']=$sSellerId;
-                header('Location: seller-properties.php');            
+                //$_SESSION['seller']=$jSeller;
+                $_SESSION['id']=$sSellerId;
+                header('Location: seller-profile.php');            
         }        
         }     
 }

@@ -2,23 +2,14 @@
 $sPageTitle = 'Upload Property';
 $sClassActive = 'upload';
 include(__DIR__.'/api-upload-property.php');
-require_once(__DIR__.'/components/top.php');
+require_once(__DIR__.'/components/seller-top.php');
 
 ?>
 
 <h2>Upload Property</h2>
 <div class="form-container">
     <form action="" method="POST" enctype="multipart/form-data">
-        <div class="input-field" id="radio-input">
-            <Label>Property Type:</Label>
-            <input type="radio" name="txtPropertyType" value="house" checked>House<br>
-            <input type="radio" name="txtPropertyType" value="condo" >Condo<br>
-            <input type="radio" name="txtPropertyType" value="apartament">Apartament<br>
-            <input type="radio" name="txtPropertyType" value="townhome">Townhome<br>
-            <input type="radio" name="txtPropertyType" value="industrial">Industrial<br>
-            <input type="radio" name="txtPropertyType" value="land">Land<br>
-        </div>
-        <div class="input-field">
+      <div class="input-field">
             <label for="select">City:</label>   
             <input type="text" name="txtCity">         
         </div>

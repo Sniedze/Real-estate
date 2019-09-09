@@ -1,6 +1,7 @@
 <?php
-$jData = getDataAsJson(__DIR__.'/data.json');
 session_start();// Starting Session
+$jData = getDataAsJson(__DIR__.'/data.json');
+
 // Storing Session
 $sSeller_check=$_SESSION['login_id'];
 

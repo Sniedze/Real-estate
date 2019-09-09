@@ -1,7 +1,7 @@
 <?php
 session_start();
-echo $_SESSION['login_id'];
-$sSellerId = $_SESSION['login_id'];
+echo $_SESSION['id'];
+$sSellerId = $_SESSION['id'];
 require_once(__DIR__.'/functions.php');
 if($_POST){
 
@@ -10,7 +10,6 @@ if($_POST){
     $sUniqueImageName= uniqid().'.'.$ext;
     move_uploaded_file($_FILES['myFile']['tmp_name'], __DIR__."/images/$sUniqueImageName");
     $sPrice = $_POST['txtPrice'];
-    $sPropertyType = $_POST['txtPropertyType'];
     $sCity = $_POST['txtCity'];
     $sZip = $_POST['txtZip'];
     $sStreet = $_POST['txtStreet'];
@@ -23,8 +22,6 @@ if($_POST){
     empty($sPrice)?sendErrorMessage('Please, input the property price', __LINE__):
     !ctype_digit($sPrice)?sendErrorMessage('invalid price', __LINE__):
     $sPrice<1?sendErrorMessage('Price must be valid', __LINE__):
-    //Validate property type
-    empty($sPropertyType)?sendErrorMessage('Please, choose the property type', __LINE__):
     //Validate the City
     empty($sCity)?sendErrorMessage('Please, input the city', __LINE__):
     strlen($sCity)<3||strlen($sCity)>30?sendErrorMessage('Please input the valid city', __LINE__):
@@ -44,15 +41,9 @@ if($_POST){
      //Validate the number of Bathrooms of the property
     !ctype_digit($sBathrooms)?sendErrorMessage('Bathroom number should only contain digits', __LINE__):
     
-
-
-
-
-
     $jProperty = new stdClass();
     $jProperty->price = intval($sPrice);
     $jProperty->image = $sUniqueImageName;
-    $jProperty->type = $sPropertyType;
     $jProperty->city = $sCity;
     $jProperty->zip = $sZip;
     $jProperty->street = $sStreet;

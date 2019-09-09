@@ -1,11 +1,12 @@
 <?php
 require_once(__DIR__.'/functions.php');
 $sPageTitle = 'Seller Properties';
-$sClassActive = 'seller-login';
-
-
-include('api-seller-login-session.php');
-require_once(__DIR__.'/components/top.php');
+$sClassActive = 'properties';
+session_start();
+$sSellerId = $_SESSION['id'];
+$jData = getDataAsJson('data.json');
+$jProperties = $jData->sellers->$sSellerId->properties;
+require_once(__DIR__.'/components/seller-top.php');
 
 
 
@@ -13,20 +14,16 @@ require_once(__DIR__.'/components/top.php');
 ?>
 <a class="profile-link" href="seller-profile.php">
 <img id="profile-image" src="images/profile-placeholder.png">
-<h4>Welcome, <?= $login_session->name?></h4>
 </a>
 
 <a href="upload.php">Upload new property</a>
 <a href="logout.php">Log out</a>
-    
-</body>
-</html>
+<div id="properties">
 <?php
 
+;
 
-$jProperties = $login_session->properties;
 $sBlueprint = '<div id="{{id}}" class="property">
-                    <h3 id="property-type">{{propertyType}}<h3/>
                     <h3 id="address">{{street}}, {{city}}, {{zip}}</h3>                    
                     <img style="width: 200px; height: auto" src="images/{{path}}">
                     <h4 id="details">{{bedrooms}} bds | {{bathrooms}} ba | {{size}} m2 </h4>
@@ -34,12 +31,22 @@ $sBlueprint = '<div id="{{id}}" class="property">
                     <p id="description">{{description}}</p>                    
                 </div>'
 ;
-foreach($jProperties as $skey => $jProperty) {
-   $sCopyOfBlueprint = $sBlueprint;
-   $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{propertyType}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}', '{{description}}'],
-                    [$jProperty->price, $jProperty->image, $skey, $jProperty->type, $jProperty->street, $jProperty->city, $jProperty->zip, $jProperty->bedrooms, $jProperty->bathrooms, $jProperty->size, $jProperty->description], $sCopyOfBlueprint);
-
-                    echo $sCopyOfBlueprint;
+if(!empty($jProperties)){
+   
+   foreach($jProperties as $skey => $jProperty) {
+      $sCopyOfBlueprint = $sBlueprint;
+      $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}', '{{description}}'],
+      [$jProperty->price, $jProperty->image, $skey, $jProperty->street, $jProperty->city, $jProperty->zip, $jProperty->bedrooms, $jProperty->bathrooms, $jProperty->size, $jProperty->description], $sCopyOfBlueprint);
+      echo $sCopyOfBlueprint;
+   }
 }
-
+else {echo '';}
 ?>
+</div>   
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
+

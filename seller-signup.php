@@ -1,7 +1,7 @@
 <?php
 $sPageTitle = 'Seller Sign up';
-$sClassActive = 'seller-signup';
-require_once(__DIR__.'/components/top.php');
+$sClassActive = 'signup';
+require_once(__DIR__.'/components/seller-top.php');
 
 ?>
     <div class="form-container">
@@ -22,10 +22,7 @@ require_once(__DIR__.'/components/top.php');
                 <label for="">Password</label>
                 <input type="text" name="txtPassword" value="555" id="password" required>
             </div>
-           <div>
-               <Label>Upload Profile Image</Label>
-               <input type="file" name="profile-image">
-           </div>
+          
             <div class="input-field">
                 <button>Sign up</button>
             </div>
