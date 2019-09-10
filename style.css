@@ -5,8 +5,8 @@
 }
 
 body{
-   display: grid;
-    justify-content: center;
+   /* display: grid; */
+    
     align-items: center;
     width: 100vw;
     height: 100vh;

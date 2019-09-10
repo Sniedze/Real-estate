@@ -29,6 +29,17 @@
                     "bedrooms": "3",
                     "bathrooms": "1",
                     "description": "A beautiful environment!"
+                },
+                "5d77fe5546b88": {
+                    "price": 999999,
+                    "image": "5d77fe553d715.jpg",
+                    "city": "Riga",
+                    "zip": "1002",
+                    "street": "Barona 2",
+                    "size": "99",
+                    "bedrooms": "9",
+                    "bathrooms": "2",
+                    "description": "Superb location!"
                 }
             },
             "": "C:\\fakepath\\profile-image.png"

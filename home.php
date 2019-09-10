@@ -12,31 +12,33 @@ $sBlueprint = '<div id="{{id}}" class="property">
                     <h4 id="details">{{bedrooms}} bds | {{bathrooms}} ba | {{size}} m2 </h4>
                     <h3 id="price">DKK {{price}}</h3>
                     <p id="description">{{description}}</p>                    
-                </div>'
-;
+                </div>';
 $jData = getDataAsJson('data.json');
 $jSellers = $jData->sellers;
-$aPropertiesArray = [];
-foreach($jSellers as $jSeller) {       
-       //print_r($jSeller->properties);
+?>
+<main id="home-main-content">
+<div id="all=properties">
+<?php
+foreach($jSellers as $jSeller) {   
+      if(isset($jSeller->properties)){
+          $jProperties=$jSeller->properties;
+          foreach($jProperties as $sKey =>$jProperty){    
       
 
-    //   $sCopyOfBlueprint = $sBlueprint;
-    //   $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}', '{{description}}'],
-    //                  [$jProperty->price, $jProperty->image, $skey, $jProperty->street, $jProperty->city, $jProperty->zip, $jProperty->bedrooms, $jProperty->bathrooms, $jProperty->size, $jProperty->description], $sCopyOfBlueprint);
+      $sCopyOfBlueprint = $sBlueprint;
+      $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}', '{{description}}'],
+                     [($jProperty->price), $jProperty->image, $sKey, $jProperty->street, $jProperty->city, $jProperty->zip, $jProperty->bedrooms, $jProperty->bathrooms, $jProperty->size, $jProperty->description], $sCopyOfBlueprint);
 
-    //                  echo $sCopyOfBlueprint;
-   }
+                     echo $sCopyOfBlueprint;
+   }}}
 
 
 ?>
-
-<div id="home-selection">
-    <a href="seller-login.php">SELL YOUR PROPERTY</a>
-    <a href="properties.php">BUY A PROPERTY</a>
+</div>
+<div id="map">
     
 </div>
-    
+</main>
 </body>
 </html>
 
