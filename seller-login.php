@@ -1,7 +1,7 @@
 <?php
 $sPageTitle = 'User Login';
 $sClassActive = 'login';
-include(__DIR__.'/api-seller-login.php');
+include(__DIR__.'/be-seller-login.php');
 
 
 require_once(__DIR__.'/components/seller-top.php');

@@ -3,18 +3,17 @@ require_once(__DIR__.'/functions.php');
 $sPageTitle = 'Seller Profile';
 $sClassActive = 'profile';
 session_start();
+print_r($_SESSION);
 $sSellerId = $_SESSION['id'];
-$jData = getDataAsJson('data.json');
-$jSeller = $jData->sellers->$sSellerId;
+$jSeller = $_SESSION['seller'];
+
+
 require_once(__DIR__.'/components/seller-top.php');
 
 ?>
 <h2>Welcome, <?=$jSeller->name?></h2>
-<div>
-    <form id="<?=$sSellerId?>" class="profile-details" method="POST">
-        <img id="profile-image" src="<?=$jSeller->profileImage?>">
-        <label for="">Upload profile image</label>    
-        <input type="file" name="profile-image" id="">
+<div id="<?=$sSellerId?>">   
+    <form id="profile-details" class="profile-details" method="POST">         
         <input type="text" data-update="name" name="txtNewName" placeholder="Name" value="<?=$jSeller->name?>">
         <input type="text" data-update="lastName" name="txtNewLastName" placeholder="Last Name" value="<?=$jSeller->lastName?>">
         <input type="text" data-update="email" name="txtNewEmail" placeholder="Email" value="<?=$jSeller->email?>">
