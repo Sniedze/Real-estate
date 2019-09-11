@@ -9,7 +9,6 @@ if ($("#profile-image[src*='Undefined']")) {
 $(document).on("blur", ".profile-details input", function() {
   var sSellerId = $(this)
     .parent()
-    .parent()
     .attr("id");
   var sUpdateKey = $(this).attr("data-update");
   var sNewValue = $(this).val();

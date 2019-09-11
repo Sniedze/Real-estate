@@ -1,7 +1,16 @@
 {
     "sellers": {
-        "56ac2972a444d41febe66e2c70f25ba7": {
-            "lastName": "Baj"
+        "a389cd7f8b6e59c61a99fb6566a793a1": {
+            "name": "Ulla",
+            "lastName": "Baj",
+            "email": "u.sniedze@gmail.co",
+            "password": "555Ppppp"
+        },
+        "f76dae460394ea07b1e76bf574bdf857": {
+            "name": "Ulrika",
+            "lastName": "Sniedze",
+            "email": "ulrika.sniedze@gmail.com",
+            "password": "555Ppppp"
         }
     }
 }

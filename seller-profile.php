@@ -5,15 +5,15 @@ $sClassActive = 'profile';
 session_start();
 print_r($_SESSION);
 $sSellerId = $_SESSION['id'];
-$jSeller = $_SESSION['seller'];
-
-
+$jData = getDataAsJson('data.json');
+$jSeller = $jData->sellers->$sSellerId;
 require_once(__DIR__.'/components/seller-top.php');
 
 ?>
 <h2>Welcome, <?=$jSeller->name?></h2>
-<div id="<?=$sSellerId?>">   
-    <form id="profile-details" class="profile-details" method="POST">         
+<div id="form-container">
+   
+    <form id="<?=$sSellerId?>" class="profile-details" method="POST">         
         <input type="text" data-update="name" name="txtNewName" placeholder="Name" value="<?=$jSeller->name?>">
         <input type="text" data-update="lastName" name="txtNewLastName" placeholder="Last Name" value="<?=$jSeller->lastName?>">
         <input type="text" data-update="email" name="txtNewEmail" placeholder="Email" value="<?=$jSeller->email?>">
