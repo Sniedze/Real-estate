@@ -23,7 +23,7 @@ a{
 
 
 /*HEADER**********************************************/
-main{
+/* main{
     top: calc(100vw - 50px);
 }
 nav a{
@@ -79,7 +79,7 @@ nav>a{
 #profile-image{
     width: 50px;
     height: auto;
-}
+} */
 #seller-properties{
     display: grid;
     grid-template-columns: 1fr 1fr;

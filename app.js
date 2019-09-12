@@ -6,6 +6,8 @@ if ($("#profile-image[src*='Undefined']")) {
   $("#profile-image").attr("src", "sProfileImageName");
 }
 
+//////////////////////Update Seller Profile///////////////////////////////////////////
+
 $(document).on("blur", ".profile-details input", function() {
   var sSellerId = $(this)
     .parent()
@@ -29,34 +31,32 @@ $(document).on("blur", ".profile-details input", function() {
     .fail(() => {});
 });
 
-//Upload Profile image
+//////////////////////Delete Seller Profile///////////////////////////////////////////
 
-// $(document).ready(function(e) {
-//   $("#profile-image-form").on("submit", function(e) {
-//     e.preventDefault();
-//     $("#message").empty();
-//     $("#loading").show();
-//     var sSellerId = $(this)
-//       .parent()
-//       .parent()
-//       .attr("id");
-//     $.ajax({
-//       url: "api-update-seller-profile.php",
-//       type: "POST",
-//       data: { data: new FormData(this), id: sSellerId },
-//       contentType: false,
-//       cache: false,
-//       processData: false,
+$(document).on("click", ".delete", function() {
+  var deleteIndex = $(this)
+    .parent()
+    .attr("id");
+  console.log("clicked");
+  $.ajax({
+    url: "api-delete-profile.php",
+    data: {
+      id: deleteIndex
+    },
+    dataType: "text",
+    type: "POST",
 
-//       success: function(data) {
-//         $("#loading").hide();
-//         $("#message").html(data);
-//       }
-//     }).done(() => {
-//       console.log("Uploaded");
-//     });
-//   });
-// });
+    success: function() {
+      location.reload();
+    },
+    error: function() {
+      alert("Fail!");
+    }
+  }).done(() => {
+    console.log("Seller has been deleted");
+    
+  });
+});
 
 //Upload new property
 

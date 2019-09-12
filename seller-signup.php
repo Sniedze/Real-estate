@@ -2,9 +2,9 @@
 <?php
 $sPageTitle = 'Sign up';
 $sClassActive = 'signup';
-include(__DIR__.'/be-create-seller-profile.php');
 
-require_once(__DIR__.'/components/seller-top.php');
+
+require_once(__DIR__.'/components/top.php');
     ?>
     <div class="form-container">
         <form id="frmSignup" method="POST">
@@ -18,11 +18,11 @@ require_once(__DIR__.'/components/seller-top.php');
             </div>
             <div class="input-field">
                 <label for="">Email</label>
-                <input type="email" name="txtEmail" value="u.sniedze@gmail.com" id="email" maxlength="100" data-type="email">
+                <input type="email" name="txtEmail" value="ue@gmail.com" id="email" maxlength="100" data-type="email">
             </div>
             <div class="input-field">
                 <label for="">Password (At least 8 characters. Must include at least 1 number and 1 uppercase character)</label>
-                <input type="text" name="txtPassword" value="555Ppppp" id="password" maxlength="20" data-type="string" data-min="8" data-max="20">
+                <input type="text" name="txtPassword" value="666Ppppp" id="password" maxlength="20" data-type="string" data-min="8" data-max="20">
             </div>     
             <button id="btnSignup" onclick="return fvSignup(this)" data-start="LOGIN" data-wait="WAIT ...">SIGNUP</button>
             
@@ -32,3 +32,6 @@ require_once(__DIR__.'/components/seller-top.php');
     <script src="scripts/signup-validation.js"></script> 
 </body>
 </html>
+<?php
+
+include(__DIR__.'/be-create-seller-profile.php');

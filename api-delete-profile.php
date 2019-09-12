@@ -1,17 +1,17 @@
 <?php
 require_once(__DIR__.'/functions.php');
-
-function deleteProfile(){
 session_start();
-unset($_SESSION['seller']);
+unset($_SESSION['id']);
 session_destroy();
-if (isset($_SESSION['seller'])) {
-    $sSeller = $_POST['seller'];
+if (isset($_POST['id'])) {
+    $sSellerId = $_POST['id'];
 };
 
 $jData = getDataAsJson(__DIR__.'/data.json');
-unset($jData->sellers->$sSeller);
+unset($jData->sellers->$sSellerId);
 saveDataToFile($jData, __DIR__.'/data.json');
 echo "success";
 
-}
+
+
+
