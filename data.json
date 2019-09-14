@@ -6,11 +6,32 @@
             "email": "u.sniedze@gmail.co",
             "password": "555Ppppp"
         },
-        "6da5df41b6a20c10a49f53463bdc7e8c": {
+        "bcb17062445539d0690d94ebfb19c014": {
             "name": "Ulrika",
             "lastName": "Bajele",
             "email": "ue@gmail.com",
-            "password": "666Ppppp"
+            "password": "666Ppppp",
+            "properties": {
+                "5d7d33feadd1e": {
+                    "price": 55555,
+                    "image": "5d7d33fead166.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "Test"
+                }
+            }
+        }
+    },
+    "users": {
+        "3b2ffc8b0dc8e56180ede54a0a9ed7ce": {
+            "name": "Yang Min",
+            "lastName": "Wang",
+            "email": "ymw@gmail.com",
+            "password": "999Ppppp"
         }
     }
 }

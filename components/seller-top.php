@@ -12,7 +12,7 @@
           
         <a <?= $sClassActive == 'properties'?'class="active"':'';?> href="home.php">HOME</a>
         <a <?= $sClassActive == 'profile'?'class="active"':'';?> href="seller-profile.php">PROFILE</a>
-        <a <?= $sClassActive == 'properties'?'class="active"':'';?> href="seller-properties.php">PROPERTIES</a> 
+        <a <?= $sClassActive == 'seller-properties'?'class="active"':'';?> href="seller-properties.php">PROPERTIES</a> 
         <a <?= $sClassActive == 'seller-logout'?'class="active"':''; ?> href="logout.php">LOG OUT</a> 
                     
     </nav>

@@ -2,4 +2,4 @@
 
 session_start();
 session_destroy();
-header('Location: seller-login.php');
+header('Location: home.php');

@@ -61,32 +61,14 @@ if($_POST){
     saveDataToFile($jData, __DIR__.'/data.json');
     $jData = getDataAsJson(__DIR__.'/data.json');
     $jProperty = $jData->sellers->$sSellerId->properties->$sPropertyUniqueId;
-    // echo '{"id":"'.$sPropertyUniqueId.'", 
-    //         "imagePath": "'.$sUniqueImageName.'",
-    //         description": "'.$jProperty->price.'",
-    //         "city": "'.$jProperty->city.'",
-    //         "zip": "'.$jProperty->zip.'",
-    //         "street": "'.$jProperty->street.'",
-    //         "size": "'.$jProperty->size.'",
-    //         "bedrooms": "'.$jProperty->bedrooms.'",
-    //         "bathrooms": "'.$jProperty->bathrooms.'",
-    //         description": "'.$jProperty->description.'"
-        
-    //     }';
     $sDivNewProperty = ' <div id="'.$sPropertyUniqueId.'" class="property">
-    <h3 id="address">'.$jProperty->street.', '.$jProperty->city.', '.$jProperty->zip.'
-}</h3>                    
-    <img style="width: 200px; height: auto" src="images/'.$jProperty->image.'">
-    <h4 id="details">'.$jProperty->bedrooms.' bds | '.$jProperty->bathrooms.' ba | ${
-jData.size
-} m2 </h4>
-    <h3 id="price">DKK '.$jProperty->price.'</h3>
-    <p id="description">'.$jProperty->description.'</p>                    
- </div>'
-   ;
-echo '{"newDiv": "'.$sDivNewProperty.'"}';
+                            <h3 id="address">'.$jProperty->street.', '.$jProperty->city.', '.$jProperty->zip.'}</h3>                    
+                            <img style="width: 200px; height: auto" src="images/'.$jProperty->image.'">
+                            <h4 id="details">'.$jProperty->bedrooms.' bds | '.$jProperty->bathrooms.' ba | ${jData.size} m2 </h4>
+                            <h3 id="price">DKK '.$jProperty->price.'</h3>
+                            <p id="description">'.$jProperty->description.'</p>                                             
+                        </div>';
+    echo '{"newDiv": "'.$sDivNewProperty.'"}';
 
     }
-
-
 ?>

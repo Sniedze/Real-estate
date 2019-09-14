@@ -1,11 +1,3 @@
-//$(image[src])=$("#profile-image[src*='Undefined']")?"images/profile-placeholder.png":"sProfileImageName";
-
-if ($("#profile-image[src*='Undefined']")) {
-  $("#profile-image").attr("src", "images/profile-placeholder.png");
-} else {
-  $("#profile-image").attr("src", "sProfileImageName");
-}
-
 //////////////////////Update Seller Profile///////////////////////////////////////////
 
 $(document).on("blur", ".profile-details input", function() {
@@ -45,15 +37,20 @@ $(document).on("click", ".delete", function() {
     },
     dataType: "text",
     type: "POST",
-
-    success: function() {
-      location.reload();
+    success: function(data) {
+      console.log(data);
+      if (data) {
+        $("#form-container").load(" #form-container");
+        
+        location.reload();
+      }
     },
+
     error: function() {
       alert("Fail!");
     }
   }).done(() => {
-    $("#form-container").load(" #form-container");
+    $("#profile-deletion").text("PROFILE SUCCESSFULLY DELETED!");
   });
 });
 
@@ -62,15 +59,6 @@ $(document).on("click", ".delete", function() {
 $("#form-property-upload").on("submit", function(ev) {
   $("#upload-button").text = "...Loading";
   ev.preventDefault();
-  // var sCity = $("#city").val();
-  // var sStreet = $("#street").val();
-  // var sZip = $("#zip").val();
-  // var sSize = $("#size").val();
-  // var sBedrooms = $("#bedrooms").val();
-  // var sBathrooms = $("#bathrooms").val();
-  // var sPrice = $("#price").val();
-  // var sDescription = $("#description").val();
-
   console.log("clicked");
   $.ajax({
     url: "api-upload-new-property.php",
@@ -81,23 +69,7 @@ $("#form-property-upload").on("submit", function(ev) {
     processData: false,
 
     success: function(data) {
-      $("#result").text(data);
       console.log("SUCCESS : ", data);
-      // var sDivNewProperty = `
-      //       <div id="${jData.id}" class="property">
-      //       <h3 id="address">${jData.street}, ${jData.city}, ${
-      //   jData.zip
-      // }</h3>
-      //       <img style="width: 200px; height: auto" src="images/${
-      //         jData.imagePath
-      //       }">
-      //       <h4 id="details">${jData.bedrooms} bds | ${jData.bathrooms} ba | ${
-      //   jData.size
-      // } m2 </h4>
-      //       <h3 id="price">DKK ${jData.price}</h3>
-      //       <p id="description">${jData.description}</p>
-      //    </div>`;
-      // $("#properties").prepend(sDivNewProperty);
     },
     error: function(e) {
       $("#result").text(e.responseText);
@@ -114,3 +86,4 @@ $("#form-property-upload").on("submit", function(ev) {
       $("res").text("System under maintenance");
     });
 });
+

@@ -80,7 +80,7 @@ nav>a{
     width: 50px;
     height: auto;
 } */
-#seller-properties{
+#seller-page{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }

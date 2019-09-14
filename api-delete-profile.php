@@ -10,7 +10,10 @@ if (isset($_POST['id'])) {
 $jData = getDataAsJson(__DIR__.'/data.json');
 unset($jData->sellers->$sSellerId);
 saveDataToFile($jData, __DIR__.'/data.json');
+
+header('seller-signup.php');
 echo "success";
+
 
 
 

@@ -7,3 +7,13 @@ function fvSignup() {
     return;
   }
 }
+
+function fvUserSignup() {
+  console.log("clicked");
+  var frmUserSignup = document.querySelector("#frmUserSignup");
+  console.log(frmUserSignup);
+  var bIsValid = fnbIsFormValid(frmUserSignup);
+  if (bIsValid == false) {
+    return;
+  }
+}

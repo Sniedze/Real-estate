@@ -2,17 +2,7 @@
 
 $sClassActive= 'home';
 $sPageTitle = 'Home';
-
-session_start();
-
-
-   
-        require_once(__DIR__.'/components/top.php');
- 
-?>
-
-<?php
-
+session_start(); 
 require_once(__DIR__.'/functions.php');
 
 $sBlueprint = '<div id="{{id}}" class="property">
@@ -20,11 +10,33 @@ $sBlueprint = '<div id="{{id}}" class="property">
                     <img style="width: 200px; height: auto" src="images/{{path}}">
                     <h4 id="details">{{bedrooms}} bds | {{bathrooms}} ba | {{size}} m2 </h4>
                     <h3 id="price">DKK {{price}}</h3>
-                    <p id="description">{{description}}</p>                    
+                    <p id="description">{{description}}</p>
+                    <img id="like-icon" style="width: 30px; height: auto" src="images/like-icon.png">                    
                 </div>';
 $jData = getDataAsJson('data.json');
 $jSellers = $jData->sellers;
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+    
+    <title>Home</title>
+</head>
+<body>   
+    <nav>        
+       
+    <a <?= $sClassActive == 'properties'?'class="active"':'';?> href="home.php">HOME</a>
+        <a <?= $sClassActive == 'user-login'?'class="active"':''; ?> href="user-login.php">USER LOGIN</a> 
+        <a <?= $sClassActive == 'seller-login'?'class="active"':'';?> href="seller-login.php">SELLER LOGIN</a>
+        <a <?= $sClassActive == 'logout'?'class="active"':'';?> href="logout.php">LOG OUT</a> 
+            
+    </nav>
     <main id="home-main-content">
         <div id="property-container">
             <form id="frmSearch" method="GET">
@@ -47,8 +59,7 @@ $jSellers = $jData->sellers;
             ?>
             </div>
             
-        </div>
-    
+        </div>   
 
         <div id="map">
         
