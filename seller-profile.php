@@ -17,7 +17,7 @@ if(isset($_SESSION['id'])){
 
     ?>
     <h2>Welcome, <?=$jSeller->name?></h2>
-    <a href="upload.php">Upload new property</a>
+    <a href="seller-properties.php">Upload new property</a>
     <a href="logout.php">Log out</a>
     <div id="form-container">   
         <form id="<?=$sSellerId?>" class="profile-details" method="POST">         

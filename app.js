@@ -54,32 +54,76 @@ $(document).on("click", ".delete", function() {
     }
   }).done(() => {
     console.log("Seller has been deleted");
-    
   });
 });
 
-//Upload new property
+//////////////////////Upload new property///////////////////////////////////////////
 
-// $("#upload-button").click(function() {
-//   var sNewPropertyName = $("#txtNewAgentName").val();
-//   var sNewAgentEmail = $("#txtNewAgentEmail").val();
+$("#form-property-upload").on("submit", function(ev) {
+  $("#upload-button").text = "...Loading";
+  ev.preventDefault();
+  // var sCity = $("#city").val();
+  // var sStreet = $("#street").val();
+  // var sZip = $("#zip").val();
+  // var sSize = $("#size").val();
+  // var sBedrooms = $("#bedrooms").val();
+  // var sBathrooms = $("#bathrooms").val();
+  // var sPrice = $("#price").val();
+  // var sDescription = $("#description").val();
 
-//   $.ajax({
-//     url: "api-create-agent.php",
-//     method: "POST",
-//     data: $("form").serialize(),
-//     dataType: "JSON"
-//   })
-//     .done(jData => {
-//       var sDivNewAgent = `
-//           <div id="${jData.id}" class="agent">
-//             <img src="a.jpg">
-//             <input data-update="name" type="text" value="${sNewAgentName}">
-//             <input data-update="email" type="text" value="${sNewAgentEmail}">
-//           </div>`;
-//       $(".agents").prepend(sDivNewAgent);
-//     })
-//     .fail(() => {
-//       $("#lblWelcome").text("System under maintenance");
-//     });
-// });
+  console.log("clicked");
+  $.ajax({
+    url: "api-upload-new-property.php",
+    method: "POST",
+    data: new FormData(this),
+    contentType: false,
+    cache: false,
+    processData: false,
+
+    success: function(data) {
+      $("#result").text(data);
+      console.log("SUCCESS : ", data);
+      // var sDivNewProperty = `
+      //       <div id="${jData.id}" class="property">
+      //       <h3 id="address">${jData.street}, ${jData.city}, ${
+      //   jData.zip
+      // }</h3>
+      //       <img style="width: 200px; height: auto" src="images/${
+      //         jData.imagePath
+      //       }">
+      //       <h4 id="details">${jData.bedrooms} bds | ${jData.bathrooms} ba | ${
+      //   jData.size
+      // } m2 </h4>
+      //       <h3 id="price">DKK ${jData.price}</h3>
+      //       <p id="description">${jData.description}</p>
+      //    </div>`;
+      // $("#properties").prepend(sDivNewProperty);
+    },
+    error: function(e) {
+      $("#result").text(e.responseText);
+      console.log("ERROR : ", e);
+    }
+  })
+    .done(jData => {
+      console.log(jData);
+      // var sDivNewProperty = `
+      //       <div id="${jData.id}" class="property">
+      //       <h3 id="address">${jData.street}, ${jData.city}, ${
+      //   jData.zip
+      // }</h3>
+      //       <img style="width: 200px; height: auto" src="images/${
+      //         jData.imagePath
+      //       }">
+      //       <h4 id="details">${jData.bedrooms} bds | ${jData.bathrooms} ba | ${
+      //   jData.size
+      // } m2 </h4>
+      //       <h3 id="price">DKK ${jData.price}</h3>
+      //       <p id="description">${jData.description}</p>
+      //    </div>`;
+      $("#properties").prepend(jData.newDiv);
+      $("#properties").load(" #properties");
+    })
+    .fail(() => {
+      $("res").text("System under maintenance");
+    });
+});

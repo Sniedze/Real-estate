@@ -1,17 +1,12 @@
 <?php
-require_once(__DIR__.'/functions.php');
 
-function deleteProfile(){
-session_start();
-unset($_SESSION['seller']);
-session_destroy();
-if (isset($_SESSION['seller'])) {
-    $sSeller = $_POST['seller'];
-};
-
+$file = $_FILES['file']['name'];
+$ext = pathinfo($file, PATHINFO_EXTENSION);
+$sUniqueImageName= uniqid().'.'.$ext;
+move_uploaded_file($_FILES['file']['tmp_name'], __DIR__."/images/$sUniqueImageName");
+$sSellerId = $_POST['id'];
 $jData = getDataAsJson(__DIR__.'/data.json');
-unset($jData->sellers->$sSeller);
-saveDataToFile($jData, __DIR__.'/data.json');
-echo "success";
+//test with Postman here!!!!!!
 
-}
+$jData->sellers->$sSellerId->profileImage = $sUniqueImageName;
+?>

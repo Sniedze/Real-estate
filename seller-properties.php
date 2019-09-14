@@ -3,67 +3,64 @@ require_once(__DIR__.'/functions.php');
 $sPageTitle = 'Seller Properties';
 $sClassActive = 'properties';
 session_start();
-$sSellerId = $_SESSION['id'];
-$jData = getDataAsJson('data.json');
-$jProperties = $jData->sellers->$sSellerId->properties;
+
+if(!isset($_SESSION)){
+      header('Location: seller-login.php');
+}
+if(isset($_SESSION)){
+      $sSellerId = $_SESSION['id'];
+      $jSeller = $_SESSION['seller'];
+}
 require_once(__DIR__.'/components/seller-top.php');
 
 
-
-
 ?>
-<a class="profile-link" href="seller-profile.php">
-<img id="profile-image" src="images/profile-placeholder.png">
-</a>
-
-<a href="upload.php">Upload new property</a>
-<a href="logout.php">Log out</a>
 <main id="seller-properties">
    <div id="property-upload">
    <h2>Upload Property</h2>
    <div class="form-container">
-      <form action="" method="POST" enctype="multipart/form-data">
+      <form id="form-property-upload" action="" method="POST" enctype="multipart/form-data">
+         <input type="file" name="myFile" id="file">
+         
          <div class="input-field">
                <label for="select">City:</label>   
-               <input type="text" name="txtCity">         
+               <input type="text" name="txtCity" id="city" value="Copenhagen">         
          </div>
          <div class="input-field">
                <label for="select">Zip:</label>   
-               <input type="text" name="txtZip">         
+               <input type="text" name="txtZip" id="zip" value="2400">         
          </div>
          <div class="input-field">
                <label for="">Street:</label>
-               <input type="text" name="txtStreet">
+               <input type="text" name="txtStreet" id="street" value="Glasvej 31">
          </div>        
          <div class="input-field">
                <label for="">Size in m2:</label>
-               <input type="text" name="txtSize">
+               <input type="text" name="txtSize" id="size" value="88">
          </div>
          <div class="input-field">
                <label for="">Bedrooms:</label>
-               <input type="text" name="txtBedrooms">
+               <input type="text" name="txtBedrooms" id="bedrooms" value="3">
          </div>
          <div class="input-field">
                <label for="">Bathrooms:</label>
-               <input type="text" name="txtBathrooms">
+               <input type="text" name="txtBathrooms" id="bathrooms" value="1">
          </div>
          <div class="input-field"> 
                <label for="">Price:</label>         
-               <input type="text" name="txtPrice">
+               <input type="text" name="txtPrice" id="price" value="55555">
          </div> 
-         <div class="input-field"> 
-               <label for="">Upload Images</label>
-               <input type="file" name="myFile">
-         </div>
+         
          <div class="input-field"> 
                <label for="">Description</label>
-               <textarea type="text" name="txtDescription"></textarea>
+               <textarea type="text" name="txtDescription" id="description">Test</textarea>
          </div>
-         <button id="upload-button">UPLOAD</button>
+         <input type="submit" id="upload-button" value="UPLOAD">
       </form>
    </div>
     
-
+   <h1>Ajax Post Result</h1>
+<span id="result"></span>
    </div>
    <div id="properties">
    <?php
@@ -73,9 +70,13 @@ require_once(__DIR__.'/components/seller-top.php');
                      <img style="width: 200px; height: auto" src="images/{{path}}">
                      <h4 id="details">{{bedrooms}} bds | {{bathrooms}} ba | {{size}} m2 </h4>
                      <h3 id="price">DKK {{price}}</h3>
-                     <p id="description">{{description}}</p>                    
+                     <p id="description">{{description}}</p>
+                     <button id="delete-button">DELETE PROPERTY</button>                    
                   </div>'
    ;
+
+   $jData = getDataAsJson('data.json');   
+   $jProperties = $jData->sellers->$sSellerId->properties;
    if(isset($jProperties)){
       
       foreach($jProperties as $skey => $jProperty) {

@@ -10,7 +10,53 @@
             "name": "Ulrika",
             "lastName": "Bajele",
             "email": "ue@gmail.com",
-            "password": "666Ppppp"
+            "password": "666Ppppp",
+            "properties": {
+                "5d7b655013345": {
+                    "price": 55555,
+                    "image": "5d7b655011fbd.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "Test"
+                },
+                "5d7c3b53da589": {
+                    "price": 55555,
+                    "image": "5d7c3b53d95e9.png",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "ghghghg"
+                },
+                "5d7c3c3197213": {
+                    "price": 55555,
+                    "image": "5d7c3c3196273.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "tttttt"
+                },
+                "5d7c3cb234d3e": {
+                    "price": 55555,
+                    "image": "5d7c3cb23168d.png",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "lllllll"
+                }
+            }
         }
     }
 }
