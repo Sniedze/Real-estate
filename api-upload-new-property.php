@@ -3,8 +3,6 @@
 
 require_once(__DIR__.'/functions.php');
 session_start();
-print_r($_POST);
-print_r($_FILES);
 
 if($_POST){
 

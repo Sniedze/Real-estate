@@ -53,7 +53,7 @@ $(document).on("click", ".delete", function() {
       alert("Fail!");
     }
   }).done(() => {
-    console.log("Seller has been deleted");
+    $("#form-container").load(" #form-container");
   });
 });
 
@@ -106,20 +106,7 @@ $("#form-property-upload").on("submit", function(ev) {
   })
     .done(jData => {
       console.log(jData);
-      // var sDivNewProperty = `
-      //       <div id="${jData.id}" class="property">
-      //       <h3 id="address">${jData.street}, ${jData.city}, ${
-      //   jData.zip
-      // }</h3>
-      //       <img style="width: 200px; height: auto" src="images/${
-      //         jData.imagePath
-      //       }">
-      //       <h4 id="details">${jData.bedrooms} bds | ${jData.bathrooms} ba | ${
-      //   jData.size
-      // } m2 </h4>
-      //       <h3 id="price">DKK ${jData.price}</h3>
-      //       <p id="description">${jData.description}</p>
-      //    </div>`;
+
       $("#properties").prepend(jData.newDiv);
       $("#properties").load(" #properties");
     })

@@ -1,29 +1,16 @@
 <?php
 
 $sClassActive= 'home';
+$sPageTitle = 'Home';
 
+session_start();
+
+
+   
+        require_once(__DIR__.'/components/top.php');
+ 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
-    <title>Home</title>
-</head>
-<body>   
-    <nav>        
-        <a <?= $sClassActive == 'home'?'class="active"':'';?> href="index.php">HOME</a>
-        <a <?= $sClassActive == 'properties'?'class="active"':'';?> href="home.php">BUY</a>
-        <a <?= $sClassActive == 'sell'?'class="active"':'';?> href="seller-login.php">SELL</a> 
-        <a <?= $sClassActive == 'seller-signup'?'class="active"':''; ?> href="seller-signup.php">SIGN UP</a> 
-        <a <?= $sClassActive == 'login'?'class="active"':'';?> href="seller-login.php">LOG IN</a>
-            
-    </nav>
 <?php
 
 require_once(__DIR__.'/functions.php');

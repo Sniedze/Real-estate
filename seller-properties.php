@@ -3,15 +3,15 @@ require_once(__DIR__.'/functions.php');
 $sPageTitle = 'Seller Properties';
 $sClassActive = 'properties';
 session_start();
+require_once(__DIR__.'/components/seller-top.php');
 
-if(!isset($_SESSION)){
+if(!$_SESSION){
       header('Location: seller-login.php');
 }
 if(isset($_SESSION)){
       $sSellerId = $_SESSION['id'];
       $jSeller = $_SESSION['seller'];
 }
-require_once(__DIR__.'/components/seller-top.php');
 
 
 ?>
@@ -20,6 +20,7 @@ require_once(__DIR__.'/components/seller-top.php');
    <h2>Upload Property</h2>
    <div class="form-container">
       <form id="form-property-upload" action="" method="POST" enctype="multipart/form-data">
+            <label for="">Upload property image</label>
          <input type="file" name="myFile" id="file">
          
          <div class="input-field">
@@ -76,7 +77,9 @@ require_once(__DIR__.'/components/seller-top.php');
    ;
 
    $jData = getDataAsJson('data.json');   
-   $jProperties = $jData->sellers->$sSellerId->properties;
+   if(!empty($jData->sellers->$sSellerId->properties)){
+          $jProperties = $jData->sellers->$sSellerId->properties;}
+   
    if(isset($jProperties)){
       
       foreach($jProperties as $skey => $jProperty) {

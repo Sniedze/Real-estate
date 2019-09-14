@@ -9,8 +9,8 @@
 </head>
 <body>   
     <nav>        
-        <a <?= $sClassActive == 'home'?'class="active"':'';?> href="index.php">HOME</a>
-        <a <?= $sClassActive == 'properties'?'class="active"':'';?> href="home.php">BUY</a>
+       
+        <a <?= $sClassActive == 'properties'?'class="active"':'';?> href="home.php">HOME</a>
         <a <?= $sClassActive == 'sell'?'class="active"':'';?> href="seller-login.php">SELL</a> 
         <a <?= $sClassActive == 'seller-signup'?'class="active"':''; ?> href="seller-signup.php">SIGN UP</a> 
         <a <?= $sClassActive == 'login'?'class="active"':'';?> href="seller-login.php">LOG IN</a>
