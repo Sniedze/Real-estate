@@ -4,7 +4,20 @@
             "name": "Ulla",
             "lastName": "Baj",
             "email": "u.sniedze@gmail.co",
-            "password": "555Ppppp"
+            "password": "555Ppppp",
+            "properties": {
+                "5d7d4844b6d13": {
+                    "price": 55555,
+                    "image": "5d7d4844955e3.png",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "Ulla"
+                }
+            }
         },
         "bcb17062445539d0690d94ebfb19c014": {
             "name": "Ulrika",
@@ -31,7 +44,31 @@
             "name": "Yang Min",
             "lastName": "Wang",
             "email": "ymw@gmail.com",
-            "password": "999Ppppp"
+            "password": "999Ppppp",
+            "likedProperties": {
+                "5d7d5607348fd": {
+                    "price": 55555,
+                    "image": "5d7d33fead166.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "Test"
+                },
+                "5d7d5616b4384": {
+                    "price": 55555,
+                    "image": "5d7d33fead166.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "Test"
+                }
+            }
         }
     }
 }

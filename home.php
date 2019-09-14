@@ -11,7 +11,7 @@ $sBlueprint = '<div id="{{id}}" class="property">
                     <h4 id="details">{{bedrooms}} bds | {{bathrooms}} ba | {{size}} m2 </h4>
                     <h3 id="price">DKK {{price}}</h3>
                     <p id="description">{{description}}</p>
-                    <img id="like-icon" style="width: 30px; height: auto" src="images/like-icon.png">                    
+                    <img class="like-icon" style="width: 30px; height: auto" src="images/like-icon.png">                    
                 </div>';
 $jData = getDataAsJson('data.json');
 $jSellers = $jData->sellers;
@@ -79,6 +79,7 @@ $jSellers = $jData->sellers;
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
+    <script src="scripts/like-property.js"></script>
 </body>
 </html>
 

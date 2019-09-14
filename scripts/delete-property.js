@@ -1,19 +1,17 @@
 //////////////////////Delete property///////////////////////////////////////////
 
-document
-  .getElementById("all-properties")
-  .addEventListener("click", function(e) {
-    if (e.target && e.target.matches("img.like-icon")) {
-      console.log("Like icon element clicked!");
-      var likeIndex = $(event.target)
+document.getElementById("properties").addEventListener("click", function(e) {
+    if (e.target && e.target.matches("button.delete-button")) {
+      console.log("Button element clicked!");
+      var delIndex = $(event.target)
         .parent()
         .attr("id");
-      console.log(likeIndex);
+      console.log(delIndex);
       $.ajax({
         url: "api-delete-property.php",
         method: "POST",
         data: {
-          likeIndex: likeIndex
+          delIndex: delIndex
         },
         dataType: "text",
         success: function(data) {
@@ -25,3 +23,4 @@ document
       });
     }
   });
+  
