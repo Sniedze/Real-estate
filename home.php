@@ -39,11 +39,12 @@ $jSellers = $jData->sellers;
     </nav>
     <main id="home-main-content">
         <div id="property-container">
-            <form id="frmSearch" method="GET">
+            <form id="frmSearch" action="home.php"method="GET">
                 <input name="search" id="txtSearch" type="text" placeholder="search">
                 <button id="search">Search</button>
-                <button id="clear-serach">Clear Search Results</button>
+                <button id="clear-search">Clear Search Results</button>
             </form>
+            <ul id="search=results"><?php include('be-search.php')?></ul>
             <div id="all-properties">
             <?php
                 foreach($jSellers as $jSeller) {   
@@ -80,6 +81,7 @@ $jSellers = $jData->sellers;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
     <script src="scripts/like-property.js"></script>
+    <script src="scripts/reset-search-results.js"></script>
 </body>
 </html>
 

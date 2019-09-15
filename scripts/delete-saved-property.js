@@ -1,14 +1,16 @@
 //////////////////////Delete property///////////////////////////////////////////
 
-document.getElementById("properties").addEventListener("click", function(e) {
-    if (e.target && e.target.matches("button.delete-button")) {
-      console.log("Button element clicked!");
+document
+  .getElementById("saved-properties")
+  .addEventListener("click", function(e) {
+    if (e.target && e.target.matches("button.btn-delete-property")) {
+      console.log("Button clicked!");
       var delIndex = $(event.target)
         .parent()
         .attr("id");
       console.log(delIndex);
       $.ajax({
-        url: "api-delete-property.php",
+        url: "api-delete-saved-property.php",
         method: "POST",
         data: {
           delIndex: delIndex
@@ -16,12 +18,11 @@ document.getElementById("properties").addEventListener("click", function(e) {
         dataType: "text",
         success: function(data) {
           console.log(data);
-          if (data == "success") {
-            
-            $("#properties").load(" #properties");
+          if (data) {
+            $("#saved-properties").load(" #saved-properties");
+            location.reload();
           }
         }
       });
     }
   });
-  

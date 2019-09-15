@@ -5,7 +5,7 @@ $sClassActive = 'user-login';
 require_once(__DIR__.'/components/top.php');
 session_start();
 if(!isset($_SESSION['id'])){
-    header('Location: seller-login.php');    
+    header('Location: user-login.php');    
 }
 if(isset($_SESSION['id'])){
     $sUserId = $_SESSION['id'];
@@ -16,10 +16,10 @@ if(isset($_SESSION['id'])){
                     <h4 id="details">{{bedrooms}} bds | {{bathrooms}} ba | {{size}} m2 </h4>
                     <h3 id="price">DKK {{price}}</h3>
                     <p id="description">{{description}}</p>
-                    <img class="like-icon" style="width: 30px; height: auto" src="images/like-icon.png">                    
+                    <img class="like-icon" style="width: 30px; height: auto" src="images/like-icon.png"> 
+                    <button class="btn-delete-property">REMOVE</button>                   
                 </div>';
-$jData = getDataAsJson('data.json');
-$jUsers = $jData->users;
+
 
     ?>
    <header>
@@ -40,17 +40,19 @@ $jUsers = $jData->users;
         </section>
         <section id="user-saved-properties">
             <h3>Properties you have saved</h3>
-            <article class="property-container">
+            <article class="property-container" id="saved-properties">
             <?php
-                foreach($jUsers as $jUser) {   
+            $jData = getDataAsJson('data.json');
+            $jUser = $jData->users->$sUserId;
+                
                     if(isset($jUser->likedProperties)){
                         $jLikedProperties=$jUser->likedProperties;
                         foreach($jLikedProperties as $sKey =>$jLikedProperty){    
                             $sCopyOfBlueprint = $sBlueprint;
                             $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}', '{{description}}'],
-                            [($jLikedProperty->price), $jLikedProperty->image, $sKey, $jLikedProperty->street, $jLikedProperty->city, $jLikedProperty->zip, $jLikedProperty->bedrooms, $jLikedProperty->bathrooms, $jLikedProperty->size, $jLikedProperty->description], $sCopyOfBlueprint);
+                            [$jLikedProperty->price, $jLikedProperty->image, $sKey, $jLikedProperty->street, $jLikedProperty->city, $jLikedProperty->zip, $jLikedProperty->bedrooms, $jLikedProperty->bathrooms, $jLikedProperty->size, $jLikedProperty->description], $sCopyOfBlueprint);
                             echo $sCopyOfBlueprint;
-            }}}    
+            }}
 
             ?>
             </article>
@@ -64,7 +66,8 @@ $jUsers = $jData->users;
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
-    <!-- <script src="scripts/like-property.js"></script> -->
+    <script src="scripts/delete-user-profile.js"></script>
+    <script src="scripts/delete-saved-property.js"></script> 
     </body>
     </html>
 

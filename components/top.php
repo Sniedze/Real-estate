@@ -11,8 +11,8 @@
     <nav>        
        
         <a <?= $sClassActive == 'properties'?'class="active"':'';?> href="home.php">HOME</a>
-        <a <?= $sClassActive == 'user-login'?'class="active"':''; ?> href="user-login.php">USER LOGIN</a> 
-        <a <?= $sClassActive == 'seller-login'?'class="active"':'';?> href="seller-login.php">SELLER LOGIN</a>
+        <a <?= $sClassActive == 'user-login'?'class="active"':''; ?> href="user-login.php">USER PROFILE</a> 
+        <a <?= $sClassActive == 'seller-login'?'class="active"':'';?> href="seller-login.php">SELLER PROFILE</a>
         <a <?= $sClassActive == 'logout'?'class="active"':'';?> href="logout.php">LOG OUT</a> 
             
     </nav>

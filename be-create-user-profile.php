@@ -3,7 +3,6 @@
 require_once(__DIR__.'/functions.php');
 
 if($_POST){    
-    //print_r($_POST);
     $sPassword = $_POST['txtPassword'];
     $sPasswordRegex = (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $sPassword));
        
@@ -34,10 +33,7 @@ if($_POST){
                 $jUser->password = $_POST['txtPassword'];
                 $sUniqueUserId = bin2hex(random_bytes(16));       
                 $jData->users->$sUniqueUserId = $jUser;
-                print_r($jUser);
                 saveDataToFile($jData, __DIR__.'/data.json');
-                print_r($jData);
-
                 header('Location: user-login.php');
                
             }     

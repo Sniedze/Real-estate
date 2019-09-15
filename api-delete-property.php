@@ -10,5 +10,6 @@ echo $sSellerId;
 $jData = getDataAsJson('data.json');
 unset($jData->sellers->$sSellerId->properties->$sPropertyId);      
 saveDataToFile($jData, 'data.json');
+unlink($jData->sellers->$sSellerId->properties->$sPropertyId->image);
 echo 'success';
       

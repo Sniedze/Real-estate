@@ -69,6 +69,48 @@
                     "description": "Test"
                 }
             }
+        },
+        "2d559c1b74211aea98b59ae23c157607": {
+            "name": "Yang Min",
+            "lastName": "Wang",
+            "email": "tu@gmail.com",
+            "password": "777Ppppp"
+        },
+        "b32b6cf965b7fcf2ca5a231149bf69b8": {
+            "name": "Yang Min",
+            "lastName": "Wang",
+            "email": "jjjj@gmail.com",
+            "password": "888Ppppp"
+        },
+        "f65fa2a1a60e2baf1e76194075b201e0": {
+            "name": "Tom",
+            "lastName": "Sun",
+            "email": "t@t.com",
+            "password": "333Ppppp",
+            "likedProperties": {
+                "5d7d65bc82333": {
+                    "price": 55555,
+                    "image": "5d7d33fead166.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "Test"
+                },
+                "5d7d65d8b32d8": {
+                    "price": 55555,
+                    "image": "5d7d33fead166.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Glasvej 31",
+                    "size": "88",
+                    "bedrooms": "3",
+                    "bathrooms": "1",
+                    "description": "Test"
+                }
+            }
         }
     }
 }
