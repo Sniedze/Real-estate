@@ -29,36 +29,36 @@ if(!$_SESSION){
                         
                         <div class="input-field">
                               <label for="select">City:</label>   
-                              <input type="text" name="txtCity" id="city" value="Copenhagen">         
+                              <input type="text" name="txtCity" id="city" >         
                         </div>
                         <div class="input-field">
                               <label for="select">Zip:</label>   
-                              <input type="text" name="txtZip" id="zip" value="2400">         
+                              <input type="text" name="txtZip" id="zip" >         
                         </div>
                         <div class="input-field">
                               <label for="">Street:</label>
-                              <input type="text" name="txtStreet" id="street" value="Glasvej 31">
+                              <input type="text" name="txtStreet" id="street" >
                         </div>        
                         <div class="input-field">
                               <label for="">Size in m2:</label>
-                              <input type="text" name="txtSize" id="size" value="88">
+                              <input type="text" name="txtSize" id="size" >
                         </div>
                         <div class="input-field">
                               <label for="">Bedrooms:</label>
-                              <input type="text" name="txtBedrooms" id="bedrooms" value="3">
+                              <input type="text" name="txtBedrooms" id="bedrooms">
                         </div>
                         <div class="input-field">
                               <label for="">Bathrooms:</label>
-                              <input type="text" name="txtBathrooms" id="bathrooms" value="1">
+                              <input type="text" name="txtBathrooms" id="bathrooms">
                         </div>
                         <div class="input-field"> 
                               <label for="">Price:</label>         
-                              <input type="text" name="txtPrice" id="price" value="55555">
+                              <input type="text" name="txtPrice" id="price">
                         </div> 
                         
                         <div class="input-field"> 
                               <label for="">Description</label>
-                              <textarea type="text" name="txtDescription" id="description">Test</textarea>
+                              <textarea type="text" name="txtDescription" id="description"></textarea>
                         </div>
                         <input type="submit" id="upload-button" value="UPLOAD">
                   </form>

@@ -2,11 +2,10 @@
 
 require_once(__DIR__.'/functions.php');
 session_start();
-if($_SESSION){
+if(isset($_SESSION['user']) && $_SESSION['user'] == 1) {
+    //session is set
     header('Location: user-profile.php');
-    return;
-   
-}
+} 
 
 if($_POST){
     $sLoginEmail = $_POST['txtLoginEmail'];
@@ -15,11 +14,16 @@ if($_POST){
     //Validating email and password
     (function(){
         global $sPasswordRegex;
-        if(empty($_POST['txtLoginEmail'])) return;
-        if(!filter_var($_POST['txtLoginEmail'], FILTER_VALIDATE_EMAIL)) return;
-        if(empty($_POST['txtLoginPassword'])) return;
-        if(!$sPasswordRegex || strlen($_POST['txtLoginPassword']) < 8) return;
-        
+        if(empty($_POST['txtLoginEmail'])&&!filter_var($_POST['txtLoginEmail'], FILTER_VALIDATE_EMAIL)) {
+            echo ' Please, enter valid email'; 
+            return;           
+        }
+       
+        if(empty($_POST['txtLoginPassword'])&&!$sPasswordRegex || strlen($_POST['txtLoginPassword']) < 8){
+            echo ' Please, enter valid password';
+            return;
+        }
+                
         $jData = getDataAsJson(__DIR__.'/data.json');
         //Checking if user is in the database
         foreach($jData->users as $sUserId=> $jUser){

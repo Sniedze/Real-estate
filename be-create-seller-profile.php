@@ -36,8 +36,7 @@ if(!$_POST){
                 saveDataToFile($jData, __DIR__.'/data.json');
                 header('Location: seller-login.php?');
                
-               
-      
+                 
     })();
     
 

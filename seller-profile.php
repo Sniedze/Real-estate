@@ -18,7 +18,7 @@ if(!$_SESSION){
     ?>
     <main>
     <header>       
-    <h2 class="welcome-message">Welcome, <?=$jSeller->name?></h2>
+        <h2 class="welcome-message">Welcome, <?=$jSeller->name?></h2>
         <a href="seller-properties.php">Upload new property</a>
     </header>
     
