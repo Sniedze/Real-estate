@@ -1,8 +1,10 @@
 <?php
 
 require_once(__DIR__.'/functions.php');
+if(!$_POST){ 
+    return;
+}
 
-if($_POST){    
     $sPassword = $_POST['txtPassword'];
     $sPasswordRegex = (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $sPassword));
        
@@ -23,7 +25,7 @@ if($_POST){
             if($jSeller->email == $_POST['txtEmail']){                
                     echo '<h3 class="error-message">This email is already in the system. Please signup with another email.</h3>';          
             return;
-        }
+        }}
                 $jSeller = new stdClass();
                 $jSeller->name = $_POST['txtName'];
                 $jSeller->lastName = $_POST['txtLastName'];
@@ -34,9 +36,9 @@ if($_POST){
                 saveDataToFile($jData, __DIR__.'/data.json');
                 header('Location: seller-login.php?');
                
-            }     
+               
       
     })();
     
 
-    }
+    

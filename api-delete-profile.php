@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__.'/functions.php');
 session_start();
-unset($_SESSION['id']);
+unset($_SESSION['sellerId']);
 session_destroy();
 if (isset($_POST['id'])) {
     $sSellerId = $_POST['id'];

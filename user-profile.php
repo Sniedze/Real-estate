@@ -4,63 +4,81 @@ $sPageTitle = 'User Profile';
 $sClassActive = 'user-login';
 require_once(__DIR__.'/components/top.php');
 session_start();
-if(!isset($_SESSION['id'])){
-    header('Location: user-login.php');    
+if(!isset($_SESSION)){
+    header('Location: user-login.php'); 
+    return;   
 }
-if(isset($_SESSION['id'])){
-    $sUserId = $_SESSION['id'];
-    $jUser = $_SESSION['user'];
-    $sBlueprint = '<div id="{{id}}" class="property">
-                    <h3 id="address">{{street}}, {{city}}, {{zip}}</h3>                    
+
+    $sUserId = $_SESSION['userId'];
+    $jData = getDataAsJson('data.json');
+    $jUser = $jData->users->$sUserId;
+    
+    
+   
+    $sBlueprint = '<div id="{{id}}" class="property">                                 
                     <img style="width: 200px; height: auto" src="images/{{path}}">
                     <h4 id="details">{{bedrooms}} bds | {{bathrooms}} ba | {{size}} m2 </h4>
                     <h3 id="price">DKK {{price}}</h3>
-                    <p id="description">{{description}}</p>
-                    <img class="like-icon" style="width: 30px; height: auto" src="images/like-icon.png"> 
+                    <h3 id="address">{{street}}, {{city}}, {{zip}}</h3>      
+                    <img class="like-icon" style="width: 30px; height: auto" src="images/red-like-icon.png"> 
                     <button class="btn-delete-property">REMOVE</button>                   
                 </div>';
 
 
     ?>
+    <main>
    <header>
-        <h2>Welcome, <?=$jUser->name?></h2>
+        <h2 class="welcome-message">Welcome, <?=$jUser->name?></h2>
    </header>    
-    <main id="user-page">
+    <div id="user-page">
         <section id="user-profile">
-            <h3>Edit your profile here</h3>
-            <div id="form-container">   
-                <form id="<?=$sUserId?>" class="profile-details" method="POST">         
-                    <input type="text" data-update="name" name="txtNewName" placeholder="Name" value="<?=$jUser->name?>">
-                    <input type="text" data-update="lastName" name="txtNewLastName" placeholder="Last Name" value="<?=$jUser->lastName?>">
-                    <input type="text" data-update="email" name="txtNewEmail" placeholder="Email" value="<?=$jUser->email?>">
-                    <input type="text" data-update="password" name="txtNewPassword" placeholder="New Password" value="<?=$jUser->password?>">
+            
+            <div class="form-container" id="user-form-container"> 
+            <h2>Edit your profile here</h2>  
+                <form class="form" id="<?=$sUserId?>" class="profile-details" method="POST"> 
+                <div class="input-field"> 
+                    <label for="">Name</label>       
+                    <input class="input" type="text" data-update="name" name="txtNewName" placeholder="Name" value="<?=$jUser->name?>">
+                </div>
+                <div class="input-field">
+                    <label for="">Last Name</label>   
+                    <input class="input" type="text" data-update="lastName" name="txtNewLastName" placeholder="Last Name" value="<?=$jUser->lastName?>">
+                </div>
+                <div class="input-field">
+                    <label for="">Email</label> 
+                    <input class="input" type="text" data-update="email" name="txtNewEmail" placeholder="Email" value="<?=$jUser->email?>">
+                </div>
+                <div class="input-field">
+                    <label for="">Password</label>
+                    <input class="input" type="text" data-update="password" name="txtNewPassword" placeholder="New Password" value="<?=$jUser->password?>">
+                </div> 
                     <button class="delete" id="delete-profile-button"; return false; >DELETE PROFILE</button>
                 </form>
             </div>
         </section>
         <section id="user-saved-properties">
-            <h3>Properties you have saved</h3>
+            <h2>Properties you have saved</h2>
             <article class="property-container" id="saved-properties">
             <?php
-            $jData = getDataAsJson('data.json');
+            
             $jUser = $jData->users->$sUserId;
                 
                     if(isset($jUser->likedProperties)){
                         $jLikedProperties=$jUser->likedProperties;
                         foreach($jLikedProperties as $sKey =>$jLikedProperty){    
                             $sCopyOfBlueprint = $sBlueprint;
-                            $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}', '{{description}}'],
-                            [$jLikedProperty->price, $jLikedProperty->image, $sKey, $jLikedProperty->street, $jLikedProperty->city, $jLikedProperty->zip, $jLikedProperty->bedrooms, $jLikedProperty->bathrooms, $jLikedProperty->size, $jLikedProperty->description], $sCopyOfBlueprint);
+                            $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}'],
+                            [$jLikedProperty->price, $jLikedProperty->image, $sKey, $jLikedProperty->street, $jLikedProperty->city, $jLikedProperty->zip, $jLikedProperty->bedrooms, $jLikedProperty->bathrooms, $jLikedProperty->size], $sCopyOfBlueprint);
                             echo $sCopyOfBlueprint;
             }}
 
             ?>
             </article>
         </section>
+        </div>
     </main>
-    
     <?php
-}
+
 
 ?>
 
@@ -68,6 +86,8 @@ if(isset($_SESSION['id'])){
     <script src="app.js"></script>
     <script src="scripts/delete-user-profile.js"></script>
     <script src="scripts/delete-saved-property.js"></script> 
+    <script src="scripts/update-user-profile.js"></script> 
+    
     </body>
     </html>
 

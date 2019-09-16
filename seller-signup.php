@@ -1,29 +1,33 @@
 
 <?php
 $sPageTitle = 'Sign up';
-$sClassActive = 'signup';
+$sClassActive = 'seller-login';
 
 
 require_once(__DIR__.'/components/top.php');
     ?>
-    
+    <main>
+    <header>
+        <a href="seller-login.php">Already a member? Log in here</a>
+    </header>
     <div class="form-container">
-        <form id="frmSignup" method="POST">
+        <h2>SIGN UP HERE</h2>
+        <form id="frmSignup" class="form" method="POST">
             <div class="input-field">
-                <label for="name">Name</label>
-                <input id="name" name="txtName" type="text" maxlength="20" data-type="string" data-min="2" data-max="20" value="Ulrika">
+                <label for="name">Name (2-20 characters)</label>
+                <input id="name" name="txtName" type="text" maxlength="20" data-type="string" data-min="2" data-max="20">
             </div>
             <div class="input-field">
-                <label for="lastName">Last Name</label>
-                <input id="lastName" name="txtLastName" type="text" maxlength="20" data-type="string" data-min="2" data-max="20" value="Bajele">
+                <label for="lastName">Last Name (2-20 characters)</label>
+                <input id="lastName" name="txtLastName" type="text" maxlength="20" data-type="string" data-min="2" data-max="20">
             </div>
             <div class="input-field">
                 <label for="email">Email</label>
-                <input id="email" type="email" name="txtEmail" value="ue@gmail.com"  maxlength="100" data-type="email">
+                <input id="email" type="email" name="txtEmail" maxlength="100" data-type="email">
             </div>
             <div class="input-field">
                 <label for="pasword">Password (At least 8 characters. Must include at least 1 number and 1 uppercase character)</label>
-                <input id="password"type="text" name="txtPassword" value="666Ppppp" maxlength="20" data-type="string" data-min="8" data-max="20">
+                <input id="password"type="text" name="txtPassword" maxlength="20" data-type="string" data-min="8" data-max="20">
             </div>     
             <button id="btnSignup" onclick="return fvSignup(this)" data-start="LOGIN" data-wait="WAIT ...">SIGNUP</button>
             
@@ -32,6 +36,7 @@ require_once(__DIR__.'/components/top.php');
         include(__DIR__.'/be-create-seller-profile.php');
         ?>
     </div>
+    </main>
     <script src="scripts/validate-form-input.js"></script>
     <script src="scripts/signup-validation.js"></script> 
 </body>

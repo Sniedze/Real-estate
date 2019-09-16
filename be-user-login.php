@@ -4,6 +4,7 @@ require_once(__DIR__.'/functions.php');
 session_start();
 if($_SESSION){
     header('Location: user-profile.php');
+    return;
    
 }
 
@@ -24,7 +25,7 @@ if($_POST){
         foreach($jData->users as $sUserId=> $jUser){
             if($jUser->email == $_POST['txtLoginEmail'] && $jUser->password == $_POST['txtLoginPassword']){                
                     $_SESSION['user']=$jUser;
-                    $_SESSION['id']=$sUserId;                   
+                    $_SESSION['userId']=$sUserId;                   
                     header('Location: user-profile.php');            
             }     
             else{

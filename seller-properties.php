@@ -1,27 +1,28 @@
 <?php
 require_once(__DIR__.'/functions.php');
 $sPageTitle = 'Seller Properties';
-$sClassActive = 'seller-properties';
+$sClassActive = 'seller-login';
 session_start();
 require_once(__DIR__.'/components/top.php');
 
 if(!$_SESSION){
       header('Location: seller-login.php');
 }
-if(isset($_SESSION)){
-      $sSellerId = $_SESSION['id'];
+
+      $sSellerId = $_SESSION['sellerId'];
       $jSeller = $_SESSION['seller'];
-}
+
 
 ?>
+<main>
 <header>
       <h2>Welcome, <?=$jSeller->name?></h2>
       <a href="seller-profile.php">Go to Profile</a>
 </header>
-<main id="seller-page">
+<div id="seller-page">
       <section id="property-upload">
             <h2>Upload Property</h2>
-            <div class="form-container">
+            <div class="form-container form">
                   <form id="form-property-upload" action="" method="POST" enctype="multipart/form-data">
                         <label for="">Upload property image</label>
                         <input type="file" name="myFile" id="file">
@@ -68,11 +69,11 @@ if(isset($_SESSION)){
       <section id="properties">
             <?php
             $sBlueprint = '<div id="{{id}}" class="property">
-                              <h3 id="address">{{street}}, {{city}}, {{zip}}</h3>                    
-                              <img style="width: 200px; height: auto" src="images/{{path}}">
+                                                
+                              <img style="width: 250px; height: auto" src="images/{{path}}">
                               <h4 id="details">{{bedrooms}} bds | {{bathrooms}} ba | {{size}} m2 </h4>
-                              <h3 id="price">DKK {{price}}</h3>
-                              <p id="description">{{description}}</p>                              
+                              <h3 id="price">DKK {{price}}</h3>  
+                              <h3 id="address">{{street}}, {{city}}, {{zip}}</h3>  
                               <button class="delete-button">DELETE PROPERTY</button>                    
                         </div>'
             ;
@@ -83,18 +84,19 @@ if(isset($_SESSION)){
             if(isset($jProperties)){            
                   foreach($jProperties as $skey => $jProperty) {
                   $sCopyOfBlueprint = $sBlueprint;
-                  $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}', '{{description}}'],
-                  [$jProperty->price, $jProperty->image, $skey, $jProperty->street, $jProperty->city, $jProperty->zip, $jProperty->bedrooms, $jProperty->bathrooms, $jProperty->size, $jProperty->description], $sCopyOfBlueprint);
+                  $sCopyOfBlueprint = str_replace(['{{price}}', '{{path}}', '{{id}}', '{{street}}', '{{city}}', '{{zip}}', '{{bedrooms}}', '{{bathrooms}}', '{{size}}'],
+                  [$jProperty->price, $jProperty->image, $skey, $jProperty->street, $jProperty->city, $jProperty->zip, $jProperty->bedrooms, $jProperty->bathrooms, $jProperty->size], $sCopyOfBlueprint);
                   echo $sCopyOfBlueprint;
                   }
             }
             else {echo '';}
             ?>
-      </section>   
+      </section>
+      </div>   
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="app.js"></script>
-<script src="delete-property.js"></script>
+<script src="scripts/delete-property.js"></script>
 </body>
 </html>
 

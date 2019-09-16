@@ -1,19 +1,20 @@
 <?php
 require_once(__DIR__.'/functions.php');
 session_start();
-if(!$_SESSION)return;
+if(!$_SESSION) return;
 $jData = getDataAsJson(__DIR__.'/data.json');
-$sUserId = $_SESSION['id'];
+$sUserId = $_SESSION['userId'];
 $sClickedPropertyId = $_POST['likeIndex'];
 $jSellers = $jData->sellers;
 
-foreach($jSellers as $sSellerId =>$jSeller){        
+foreach($jSellers as $jSeller){        
         foreach($jSeller->properties as $sPropertyId=> $jProperty){
-            if($sPropertyId==$sClickedPropertyId){                 
+            if($sPropertyId == $sClickedPropertyId){    
+                $jClickedProperty=$jProperty;             
             }
         }
     }
-    $jClickedProperty = $jData->sellers->$sSellerId->properties->$sPropertyId;
+   
     
     $jLikedProperty = new stdClass();
     $sLikedPropertyUniqueId = uniqid();
@@ -29,9 +30,6 @@ foreach($jSellers as $sSellerId =>$jSeller){
 
     
     $jData->users->$sUserId->likedProperties->$sLikedPropertyUniqueId = $jLikedProperty;
-    
-
     saveDataToFile($jData, 'data.json');
-    
 
     

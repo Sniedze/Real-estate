@@ -1,113 +1,115 @@
 {
     "sellers": {
-        "a389cd7f8b6e59c61a99fb6566a793a1": {
-            "name": "Ulla",
-            "lastName": "Baj",
-            "email": "u.sniedze@gmail.co",
-            "password": "555Ppppp",
+        "89033fefc72c30b54f346590960d48c2": {
+            "name": "Ulrika",
+            "lastName": "Sniedze",
+            "email": "u.sniedze@gmail.com",
+            "password": "666Ppppp",
             "properties": {
-                "5d7d4844b6d13": {
+                "5d7ee5eb10335": {
                     "price": 55555,
-                    "image": "5d7d4844955e3.png",
+                    "image": "5d7ee5eb0b12c.jpg",
                     "city": "Copenhagen",
                     "zip": "2400",
                     "street": "Glasvej 31",
                     "size": "88",
                     "bedrooms": "3",
                     "bathrooms": "1",
-                    "description": "Ulla"
+                    "description": "Test"
+                },
+                "5d7ee67eb8c45": {
+                    "price": 44667788,
+                    "image": "5d7ee67eb78bc.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2300",
+                    "street": "Bovej 6",
+                    "size": "190",
+                    "bedrooms": "6",
+                    "bathrooms": "2",
+                    "description": "Test"
+                },
+                "5d7ee6e4b7817": {
+                    "price": 46666666,
+                    "image": "5d7ee6e4b5cbe.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2400",
+                    "street": "Norrebrogadej 33",
+                    "size": "90",
+                    "bedrooms": "4",
+                    "bathrooms": "2",
+                    "description": "Test"
                 }
             }
         },
-        "bcb17062445539d0690d94ebfb19c014": {
-            "name": "Ulrika",
-            "lastName": "Bajele",
-            "email": "ue@gmail.com",
-            "password": "666Ppppp",
+        "191033b31b433706805762172eaf779e": {
+            "name": "Yang Min",
+            "lastName": "Wang",
+            "email": "ymw@gmail.com",
+            "password": "777Ppppp",
             "properties": {
-                "5d7d33feadd1e": {
-                    "price": 55555,
-                    "image": "5d7d33fead166.jpg",
+                "5d7ee8a4ac6d4": {
+                    "price": 789678,
+                    "image": "5d7ee8a4ab34c.jpg",
                     "city": "Copenhagen",
-                    "zip": "2400",
-                    "street": "Glasvej 31",
-                    "size": "88",
-                    "bedrooms": "3",
+                    "zip": "2200",
+                    "street": "Buvej 7",
+                    "size": "90",
+                    "bedrooms": "5",
+                    "bathrooms": "2",
+                    "description": "Test"
+                },
+                "5d7ee8d989853": {
+                    "price": 7896785,
+                    "image": "5d7ee8d9888b3.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2200",
+                    "street": "Getvej 9",
+                    "size": "67",
+                    "bedrooms": "2",
                     "bathrooms": "1",
+                    "description": "Test"
+                },
+                "5d7ee9044e0f1": {
+                    "price": 666666666,
+                    "image": "5d7ee9044cd69.jpg",
+                    "city": "Copenhagen",
+                    "zip": "2300",
+                    "street": "Hivej 78",
+                    "size": "90",
+                    "bedrooms": "4",
+                    "bathrooms": "2",
                     "description": "Test"
                 }
             }
         }
     },
     "users": {
-        "3b2ffc8b0dc8e56180ede54a0a9ed7ce": {
-            "name": "Yang Min",
-            "lastName": "Wang",
-            "email": "ymw@gmail.com",
-            "password": "999Ppppp",
+        "153a028cbeecc29d0d293cef1ba7e6b2": {
+            "name": "Patriks",
+            "lastName": "Mikus",
+            "email": "pm@gmail.com",
+            "password": "888Ppppp",
             "likedProperties": {
-                "5d7d5607348fd": {
-                    "price": 55555,
-                    "image": "5d7d33fead166.jpg",
+                "5d7ee9b68603b": {
+                    "price": 46666666,
+                    "image": "5d7ee6e4b5cbe.jpg",
                     "city": "Copenhagen",
                     "zip": "2400",
-                    "street": "Glasvej 31",
-                    "size": "88",
-                    "bedrooms": "3",
-                    "bathrooms": "1",
+                    "street": "Norrebrogadej 33",
+                    "size": "90",
+                    "bedrooms": "4",
+                    "bathrooms": "2",
                     "description": "Test"
                 },
-                "5d7d5616b4384": {
-                    "price": 55555,
-                    "image": "5d7d33fead166.jpg",
+                "5d7ee9b8ca295": {
+                    "price": 666666666,
+                    "image": "5d7ee9044cd69.jpg",
                     "city": "Copenhagen",
-                    "zip": "2400",
-                    "street": "Glasvej 31",
-                    "size": "88",
-                    "bedrooms": "3",
-                    "bathrooms": "1",
-                    "description": "Test"
-                }
-            }
-        },
-        "2d559c1b74211aea98b59ae23c157607": {
-            "name": "Yang Min",
-            "lastName": "Wang",
-            "email": "tu@gmail.com",
-            "password": "777Ppppp"
-        },
-        "b32b6cf965b7fcf2ca5a231149bf69b8": {
-            "name": "Yang Min",
-            "lastName": "Wang",
-            "email": "jjjj@gmail.com",
-            "password": "888Ppppp"
-        },
-        "f65fa2a1a60e2baf1e76194075b201e0": {
-            "name": "Tom",
-            "lastName": "Sun",
-            "email": "t@t.com",
-            "password": "333Ppppp",
-            "likedProperties": {
-                "5d7d65bc82333": {
-                    "price": 55555,
-                    "image": "5d7d33fead166.jpg",
-                    "city": "Copenhagen",
-                    "zip": "2400",
-                    "street": "Glasvej 31",
-                    "size": "88",
-                    "bedrooms": "3",
-                    "bathrooms": "1",
-                    "description": "Test"
-                },
-                "5d7d65d8b32d8": {
-                    "price": 55555,
-                    "image": "5d7d33fead166.jpg",
-                    "city": "Copenhagen",
-                    "zip": "2400",
-                    "street": "Glasvej 31",
-                    "size": "88",
-                    "bedrooms": "3",
-                    "bathrooms": "1",
+                    "zip": "2300",
+                    "street": "Hivej 78",
+                    "size": "90",
+                    "bedrooms": "4",
+                    "bathrooms": "2",
                     "description": "Test"
                 }
             }

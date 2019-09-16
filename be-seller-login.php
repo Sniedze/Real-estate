@@ -3,12 +3,12 @@
 require_once(__DIR__.'/functions.php');
 session_start();
 if($_SESSION){
-    echo '{"status":1,"message":"success"}';
     header('Location: seller-profile.php');
    
 }
+if(!$_POST) return;
 
-if($_POST){
+
     $sLoginEmail = $_POST['txtLoginEmail'];
     $sLoginPassword = $_POST['txtLoginPassword'];
     $sPasswordRegex = (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $sLoginPassword));
@@ -25,7 +25,7 @@ if($_POST){
         foreach($jData->sellers as $sSellerId=> $jSeller){
             if($jSeller->email == $_POST['txtLoginEmail'] && $jSeller->password == $_POST['txtLoginPassword']){                
                     $_SESSION['seller']=$jSeller;
-                    $_SESSION['id']=$sSellerId;                   
+                    $_SESSION['sellerId']=$sSellerId;                   
                     header('Location: seller-profile.php');            
             }     
             else{
@@ -34,4 +34,4 @@ if($_POST){
             }     
     })();
     
-}
+

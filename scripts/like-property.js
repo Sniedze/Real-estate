@@ -5,10 +5,10 @@ document
   .addEventListener("click", function(e) {
     if (e.target && e.target.matches("img.like-icon")) {
       console.log("Like icon element clicked!");
-      var likeIndex = $(event.target)
+      var likeIndex = $(e.target)
         .parent()
         .attr("id");
-      //console.log(likeIndex);
+      console.log(likeIndex);
       $.ajax({
         url: "api-like-property.php",
         method: "POST",
@@ -16,11 +16,16 @@ document
           likeIndex: likeIndex
         },
         dataType: "text",
-        success: function(data) {
-          if (data) {
-            console.log(data);
-            // $("#user-saved-properties").prepend(jData.newDiv);
-            // $("#user-saved-properties").load(" #user-saved-properties");
+        success: function(jData) {
+          if (jData) {
+            $.ajax({
+              url: "api-send-email.php",
+              method: "POST",
+              data: {
+                likeIndex: likeIndex
+              },
+              dataType: "text"
+            });
           }
         }
       });

@@ -3,7 +3,7 @@ session_start();
 require_once('functions.php');
 print_r($_POST);
 if(!$_SESSION)return;
-$sUserId = $_SESSION['id'];
+$sUserId = $_SESSION['userId'];
 $sLikedPropertyId = $_POST['delIndex'];
 echo $sUserId;
 echo $sUserId;
